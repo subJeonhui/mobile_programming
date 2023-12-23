@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/quizFragment">
+
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.lesson6lab.QuizFragment"
+        tools:layout="@layout/fragment_quiz">
+        <action
+            android:id="@+id/action_quizFragment_to_endFragment"
+            app:destination="@id/endFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_tryAgainFragment"
+            app:destination="@id/tryAgainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tryAgainFragment"
+        android:name="com.example.lesson6lab.TryAgainFragment"
+        tools:layout="@layout/fragment_try_again">
+        <action
+            android:id="@+id/action_tryAgainFragment_to_quizFragment"
+            app:destination="@id/quizFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/endFragment"
+        android:name="com.example.lesson6lab.EndFragment"
+        tools:layout="@layout/fragment_end">
+    </fragment>
+
+</navigation>
